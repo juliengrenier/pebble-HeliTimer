@@ -9,7 +9,7 @@ void itoa3(int num, char* buffer) {
     return;
   } 
   buffer[0] = digits[num / 100];
-  buffer[1] = digits[num / 10];
+  buffer[1] = digits[(num % 100) / 10];
   buffer[2] = digits[num % 10];
 
 }
