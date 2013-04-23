@@ -9,7 +9,7 @@
 #define MY_UUID { 0x66, 0x8E, 0x57, 0x84, 0x30, 0x9D, 0x43, 0x4A, 0xB0, 0xD6, 0xC8, 0xE2, 0xD7, 0x86, 0x69, 0x11 }
 PBL_APP_INFO(MY_UUID,
              "HeliTimer", "mail@juliengrenier.cc",
-             1, 0, /* App version */
+             1, 1, /* App version */
              RESOURCE_ID_IMAGE_MENU_ICON,
              APP_INFO_STANDARD_APP);
 
