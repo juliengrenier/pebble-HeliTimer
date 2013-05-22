@@ -9,7 +9,7 @@
 #define MY_UUID { 0x66, 0x8E, 0x57, 0x84, 0x30, 0x9D, 0x43, 0x4A, 0xB0, 0xD6, 0xC8, 0xE2, 0xD7, 0x86, 0x69, 0x11 }
 PBL_APP_INFO(MY_UUID,
              "HeliTimer", "mail@juliengrenier.cc",
-             1, 1, /* App version */
+             1, 2, /* App version */
              RESOURCE_ID_IMAGE_MENU_ICON,
              APP_INFO_STANDARD_APP);
 
@@ -34,13 +34,16 @@ TextLayer date_layer;
 Timer flight_timer={  
   .text_layer = &flight_time_layer,
   .seconds = 0,
-  .started = false
+  .started = false,
+  .vibrate_interval = 30 * 60 , //Vibrate every 30 minutes
+  .vibrate_interval_offset = -2 * 60 //Make it vibrate two minutes before (e.g : 28, 58, 1:28, etc.)
 };
 
 Timer aircraft_engine_timer = {
   .text_layer = &aircraft_engine_runtime_layer,
   .seconds = 0,
-  .started = false
+  .started = false,
+  .vibrate_interval = 0
 };
 
 static Counter lift_counter = {

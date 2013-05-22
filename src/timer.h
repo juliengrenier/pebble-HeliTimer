@@ -4,6 +4,8 @@ typedef struct Timer {
   TextLayer *text_layer;
   int32_t seconds;
   bool started;
+  int32_t vibrate_interval; //Seconds
+  int32_t vibrate_interval_offset; //Seconds
 } Timer;
 
 void display_timer(Timer *timer, char* display);

@@ -11,6 +11,12 @@ void display_timer(Timer *timer, char* display){
 void timer_tick(Timer *timer){
   if (timer->started){
     timer->seconds++;
+    if (timer->vibrate_interval > 0){
+
+      if ((timer->seconds - timer->vibrate_interval_offset) % timer->vibrate_interval == 0){
+          vibes_double_pulse();
+      }
+    }
   }
 }
 
